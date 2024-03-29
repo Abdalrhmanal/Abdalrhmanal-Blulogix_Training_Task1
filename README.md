@@ -23,7 +23,7 @@
 
 ## Step 5: Modify the display page to add filter fields above the table header and at the head of each column of the table
 
-![](assest/Images/Task-2-S.png)
+![](assest/Images/Task-2-SL.png)
 
 # Task-1 :
 * 1- Add new lib (Angular library) called ui
