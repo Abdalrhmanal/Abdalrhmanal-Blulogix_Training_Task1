@@ -10,7 +10,20 @@
 # THE SOLUTION 
 
 # Steps :
-## Step 1: 
+## Step 1: Create the required filter library Pipes
+* This is done through the following command `ng generate library pipes`
+
+## Step 2: Create the required filter in order
+* This is done through the following command `ng generate pipe custom-filter --project=pipes`
+
+## Step 3:  Add a new method to the CustomFilterPipe
+
+## Step 4: Preparing functions to apply the filter to the table in table.compont.ts
+* The functions are configured to apply three filters to each column of the filter table
+
+## Step 5: Modify the display page to add filter fields above the table header and at the head of each column of the table
+
+![](assest/Images/Task-2-S.png)
 
 # Task-1 :
 * 1- Add new lib (Angular library) called ui
