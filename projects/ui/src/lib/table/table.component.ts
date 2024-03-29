@@ -14,10 +14,10 @@ export class TableComponent {
 
   // هنا تم تعريف مصفوفة احادية باسم items لتخزين البيانات وارسالها الى العرض
   items = [
-    { First: 'Abdulrahman', Last: 'Al-Sarakbi', Email: 'Abdurahman1@code.com' },
-    { First: 'Khaled', Last: 'Al-Sarakbi', Email: 'Khaled642@code.com' },
-    { First: 'Yahea', Last: 'Al-Sarakbi', Email: 'Yahea155@code.com' },
-    { First: 'Ahmad', Last: 'Al-Sarakbi', Email: 'Ahmad812@code.com' },
+    { firstName: 'John', lastName: 'Doe', email: 'john@example.com' },
+    { firstName: 'Jane', lastName: 'Doe', email: 'jane@example.com' },
+    { firstName: 'Alice', lastName: 'Smith', email: 'alice@example.com' },
+    { firstName: 'Bob', lastName: 'Smith', email: 'bob@example.com' }
   ];
 
 }
