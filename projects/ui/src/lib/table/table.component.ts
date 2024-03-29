@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , Input } from '@angular/core';
 import { NgFor } from '@angular/common';
 
 @Component({
@@ -10,6 +10,8 @@ import { NgFor } from '@angular/common';
 })
 
 export class TableComponent {
+  @Input() tableConfig: any;
+
   // هنا تم تعريف مصفوفة احادية باسم items لتخزين البيانات وارسالها الى العرض
   items = [
     { First: 'Abdulrahman', Last: 'Al-Sarakbi', Email: 'Abdurahman1@code.com' },
