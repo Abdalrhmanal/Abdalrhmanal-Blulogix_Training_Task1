@@ -1,23 +1,44 @@
 <main class="main">
   <div class="container">
-    <!-- استخدمتclass="table table-hover" لتعريف الأسلوب لتغيير لون الخلفية عند التحويم (hover) على السطر -->
-     <table class="table table-dark table-hover">
-      <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th><input type="text" placeholder="Filter on First Name"></th>
-            <th><input type="text" placeholder="Filter on Last Name"></th>
-            <th><input type="text" placeholder="Filter on Email"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of items; let i = index">
-          <td scope="row">{{ i + 1 }}</td>
-          <td>{{ item.firstName }}</td>
-          <td>{{ item.lastName }}</td>
-          <td>{{ item.email }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="row mb-3">
+      <div class="col">
+        <!-- تطبيق الفلتر الاول على العمود الاول من الجدول  -->
+        <input type="text" class="form-control" placeholder="Filter on First Name" [(ngModel)]="firstNameFilter"
+          (keyup)="applyFilters()">
+      </div>
+      <div class="col">
+        <!-- تطبيق الفلتر الثاني على الاسم الثاني العمود التاني من الجدول  -->
+        <input type="text" class="form-control" placeholder="Filter on Last Name" [(ngModel)]="lastNameFilter"
+          (keyup)="applyFilters()">
+      </div>
+      <div class="col">
+        <!-- تطبيق الفلتر على الايميل في العمود التالت -->
+        <input type="text" class="form-control" placeholder="Filter on Email" [(ngModel)]="emailFilter"
+          (keyup)="applyFilters()">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <table class="table table-dark table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of filteredItems; let i = index">
+              <td scope="row">{{ i + 1 }}</td>
+              <td>{{ item.firstName }}</td>
+              <td>{{ item.lastName }}</td>
+              <td>{{ item.email }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
+
 </main>
