@@ -27,7 +27,7 @@ export class TableComponent {
   firstNameFilter: string = '';
   lastNameFilter: string = '';
   emailFilter: string = '';
-  
+
   // دالة لتطبيق الفلاتر على البيانات
   applyFilters() {
     this.filteredItems = this.items.filter(item =>
