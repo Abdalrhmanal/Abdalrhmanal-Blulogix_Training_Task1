@@ -3,10 +3,20 @@
     <div class="row mb-3">
       <div class="col-8">
         <!-- Remove individual filter input fields -->
-        <input type="text" class="form-control" placeholder="Filter" [(ngModel)]="filterValue"
-          (keyup)="applyFilters()">
+        <input type="text" class="form-control" placeholder="Filter" [(ngModel)]="filterValue" (keyup)="applyFilters()">
       </div>
-      <div class="col-2"></div>
+      <div class="col-1"></div>
+      <!-- قائمة من اجل اختيار نوع طريقة عرض البيانات لاستخدامها في الفلتر المحدد -->
+      <div class="col-2">
+        <select class="form-select mb-3 select-control" [(ngModel)]="selectedRenderOption" (change)="applyFilters()">
+          <option value="uppercase">Uppercase</option>
+          <option value="lowercase">Lowercase</option>
+          <option value="camelcase">Camelcase</option>
+          <option value="fancy">Fancy (Decorated Text)</option>
+        </select>
+      </div>
+      <div class="col-1"></div>
+
     </div>
     <div class="row">
       <div class="col">
@@ -24,9 +34,11 @@
           <tbody>
             <tr *ngFor="let item of filteredItems; let i = index">
               <td scope="row">{{ i + 1 }}</td>
-              <td>{{ item.firstName }}</td>
-              <td>{{ item.lastName }}</td>
-              <td>{{ item.email }}</td>
+              <!-- استخدام الفلتر من اجل تحديد طريقة لعرض البيانات بها  -->
+              <td>{{ item.firstName | formattingOptions:selectedRenderOption }}</td>
+              <td>{{ item.lastName | formattingOptions:selectedRenderOption}}</td>
+              <td>{{ item.email | formattingOptions:selectedRenderOption}}</td>
+              <!-- استخدام الفلتر من اجل القيم الافتراضية مثل $ و 0/1 -->
               <td>{{ item.is_works | preRender }}</td>
               <td>{{ item.salary | preRender}} </td>
             </tr>

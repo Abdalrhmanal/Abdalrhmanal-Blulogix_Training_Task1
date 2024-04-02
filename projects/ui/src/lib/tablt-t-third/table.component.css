@@ -6,3 +6,18 @@ main{
   margin: 30px;
 }
 
+/* استهداف القائمة المنسدلة */
+.select-control {
+  background-color: orange; /* تعيين لون الخلفية */
+  color: white; /* تعيين لون النص */
+  border: 2px solid orange; /* تعيين حدود */
+  border-radius: 5px; /* إضافة حواف مستديرة */
+  font-weight: bold; /* جعل الخط عريض */
+}
+
+/* استهداف الخيارات في القائمة المنسدلة */
+.select-control option {
+  background-color: orange; /* تعيين لون الخلفية */
+  color: white; /* تعيين لون النص */
+  font-weight: bold; /* جعل الخط عريض */
+}
