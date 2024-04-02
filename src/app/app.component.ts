@@ -8,7 +8,7 @@ import { NavbarComponent } from "./navbar/navbar.component";
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [RouterOutlet, TableComponent,  NavbarComponent]
+    imports: [RouterOutlet, TableComponent,  NavbarComponent,]
 })
 export class AppComponent {
   title = 'Blulogix-AP';
