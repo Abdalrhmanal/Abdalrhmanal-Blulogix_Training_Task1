@@ -2,7 +2,7 @@
 import { Component, Input, TemplateRef } from '@angular/core';
 import { FirstNameFilterPipe } from '../../../../pipes/src/lib/pipes/first-namepip.pipe'; // استيراد الأنبوبة
 import { FormsModule } from '@angular/forms';
-import { NgFor } from '@angular/common';
+import { CommonModule, NgFor } from '@angular/common';
 import { PreRenderPipe } from '../../../../pipes/src/lib/pipes/pre-render.pipe';
 import { FormattingOptionsPipe } from '../../../../pipes/src/lib/pipes/formatting-options.pipe';
 
@@ -11,7 +11,7 @@ import { FormattingOptionsPipe } from '../../../../pipes/src/lib/pipes/formattin
   standalone: true,
   templateUrl: './table.component.html',
   styleUrl: './table.component.css',
-  imports: [FormsModule, NgFor, PreRenderPipe, FormattingOptionsPipe],
+  imports: [FormsModule, NgFor, PreRenderPipe, FormattingOptionsPipe ,CommonModule],
   providers: [FirstNameFilterPipe] // توفير الأنبوبة كمزود في المكون
 })
 
