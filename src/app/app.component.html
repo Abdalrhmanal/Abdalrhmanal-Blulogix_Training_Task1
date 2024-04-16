@@ -4,4 +4,10 @@
 <app-navbar></app-navbar>
 <router-outlet></router-outlet>
 
+<!-- استخدام القالب في كل الكومبونت الموجودة في المشوع  -->
+<ng-template #customTemplate let-item>
+  <h1>Custom Template - Task Fourth </h1>
+  <button>{{ item }}</button>
+</ng-template>
 
+<lib-table-third [customTemplate]="customTemplate"></lib-table-third>
