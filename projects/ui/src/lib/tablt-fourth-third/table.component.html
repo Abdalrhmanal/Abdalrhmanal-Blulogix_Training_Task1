@@ -1,5 +1,6 @@
 <main class="main">
   <div class="container">
+    
     <div class="row mb-3">
       <div class="col-8">
         <!-- Remove individual filter input fields -->
@@ -32,15 +33,15 @@
             </tr>
           </thead>
           <tbody>
+
             <tr *ngFor="let item of filteredItems; let i = index">
               <td scope="row">{{ i + 1 }}</td>
-              <!-- !-- استخدام الفلتر من اجل تحديد طريقة لعرض البيانات بها -->
-              <td>{{ item.firstName | formattingOptions:selectedRenderOption }}</td>
-              <td>{{ item.lastName | formattingOptions:selectedRenderOption}}</td>
-              <td>{{ item.email | formattingOptions:selectedRenderOption}}</td>
-               <!-- استخدام الفلتر من اجل القيم الافتراضية مثل $ و 0/1 -->
-              <td>{{ item.is_works | preRender }}</td>
-              <td>{{ item.salary | preRender}} </td>
+              <!-- تطبيق القالب على جميع خلايا الجدول من اجل تحويل الخلية الى زر بنفس البيانات  -->
+              <td><ng-container *ngTemplateOutlet="customTemplate; context: { $implicit: item.firstName  | formattingOptions:selectedRenderOption  , field: 'firstName' }"></ng-container></td>
+              <td><ng-container *ngTemplateOutlet="customTemplate; context: { $implicit: item.lastName | formattingOptions:selectedRenderOption, field: 'lastName' }"></ng-container></td>
+              <td><ng-container *ngTemplateOutlet="customTemplate; context: { $implicit: item.email | formattingOptions:selectedRenderOption, field: 'email' }"></ng-container></td>
+              <td><ng-container *ngTemplateOutlet="customTemplate; context: { $implicit: item.is_works | preRender , field: 'is_works' }"></ng-container></td>
+              <td><ng-container *ngTemplateOutlet="customTemplate; context: { $implicit: item.salary | preRender , field: 'salary' }"></ng-container></td>
             </tr>
           </tbody>
         </table>

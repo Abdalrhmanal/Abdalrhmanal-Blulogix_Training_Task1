@@ -1,22 +1,24 @@
 
-import { Component } from '@angular/core';
+import { Component, Input, TemplateRef } from '@angular/core';
 import { FirstNameFilterPipe } from '../../../../pipes/src/lib/pipes/first-namepip.pipe'; // استيراد الأنبوبة
 import { FormsModule } from '@angular/forms';
+import { CommonModule, NgFor } from '@angular/common';
 import { PreRenderPipe } from '../../../../pipes/src/lib/pipes/pre-render.pipe';
 import { FormattingOptionsPipe } from '../../../../pipes/src/lib/pipes/formatting-options.pipe';
-import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'lib-table-third',
+  selector: 'lib-table-fourth',
   standalone: true,
   templateUrl: './table.component.html',
   styleUrl: './table.component.css',
-  imports: [FormsModule, NgFor, PreRenderPipe, FormattingOptionsPipe ],
+  imports: [FormsModule, NgFor, PreRenderPipe, FormattingOptionsPipe ,CommonModule],
   providers: [FirstNameFilterPipe] // توفير الأنبوبة كمزود في المكون
 })
 
 
-export class TableThridComponent {
+export class TableFourthComponent {
+//  يعرف متغير الإدخال customTemplate في المكون TableThirdComponent باعتباره نوعًا من TemplateRef.
+  @Input() customTemplate!: TemplateRef<any>;
 
   items: { firstName: string; lastName: string; email: string; is_works: boolean; salary: Number; }[] = [
     { firstName: 'John', lastName: 'Doe', email: 'john@example.com', is_works: false, salary: 100 },

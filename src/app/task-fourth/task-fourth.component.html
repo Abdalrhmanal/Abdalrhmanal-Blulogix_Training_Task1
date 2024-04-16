@@ -1,0 +1,11 @@
+<!-- استخدام القالب في كل الكومبونت الموجودة في المشوع  -->
+<h1 class="text-center" style="color: chocolate;">
+  Task Fourth apply Custom Template
+</h1>
+<!-- هنا نقوم بتحديد طريقة العرض للقالب الجديد  -->
+<ng-template #customTemplate let-item>
+<!-- هنا مثلا اضفنا زر بدل من القيمة النصية في خلاية الجدول  -->
+  <button>{{ item }}</button>
+</ng-template>
+<!-- هنا قمنا باستخدام القالب الجديد في جميع الكومبونت في هذا المشروع -->
+<lib-table-fourth [customTemplate]="customTemplate"></lib-table-fourth>
