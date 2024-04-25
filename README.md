@@ -1,5 +1,11 @@
 # Blulogix - Training 
+# Task-3
 
+* 1- Merge the filters in one filter input, this new filter fill behaves as any of the previous filters or any combination of any of them.
+* 2- Create a new pipe in the pipes library called preRender, this pipe will change the text to any different format like (0 to "No", 1 to "Yes", 100.7 to $100.7, ... )
+* 3- Formatting options in the render pipe will be (uppercase, lowercase, camelcase), the pipe will take two parameters (text: string, option: string)
+
+* 
 # Task-2
 * 1- Make the table in the previous task able to accept input as a configuration for the settings and data of the   table, the configuration will contain (columns, rows).
 * 2- Add a new lib called pipes and create a custom filter pipe, the pipe will accept three parameters (data, key, value).
